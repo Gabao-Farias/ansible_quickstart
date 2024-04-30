@@ -1,0 +1,15 @@
+- name: My first play
+  hosts: myhosts
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+
+   - name: Add string to the top of the file
+     ansible.builtin.lineinfile:
+        path: "~/test/doc.md"
+        insertbefore: BOF
+        line: "top string concatenated by ansible"
+
+   - name: Print message
+     ansible.builtin.debug:
+      msg: Hello world
